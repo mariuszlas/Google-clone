@@ -4,38 +4,42 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link src="./assets/styles.css" rel="stylesheet" />
+    <link href="assets/styles.css" rel="stylesheet" />
     <title>Google</title>
   </head>
+
   <header>
     <nav>
-      <ul>
-        <li class="headerlink">About</li>
-        <li class="headerlink">Store</li>
-        <li class="headerlink">Gmail</li>
-        <li class="headerlink">Images</li>
-        <li id="sign-in">Sign in</li>
+      <ul class="left-nav">
+        <li class="nav">About</li>
+        <li class="nav">Store</li>
+      </ul>
+      <ul class="right-nav">
+        <li>Gmail</li>
+        <li>Images</li>
+        <button id="sign-in">Sign in</button>
       </ul>
     </nav>
   </header>
   <body>
-    <div class="logo">
+    <div class="logo container">
       <img
       src=https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png>
     </div>
 
-    <form>
+    <form class="container">
       <input type="text" placeholder="Search.." />
     </form>
-
-    <button type="button">Search</button>
-    <button type="button">I'm Feeling Lucky</button>
+    <div class="container">
+      <button type="button">Search</button>
+      <button type="button">I'm Feeling Lucky</button>
+    </div>
   </body>
   <footer>
-    <section>
-      <p class="bottom-left">futureproof</p>
+    <section id="footer-top" class="container">
+      <p class="bottom-left">Futureproof</p>
     </section>
-    <section>
+    <section id="footer-bottom" class="container">
       <p>© Mariusz and Abigail 2021</p>
     </section>
   </footer>

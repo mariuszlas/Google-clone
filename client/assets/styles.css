@@ -1,8 +1,51 @@
 body {
-    display: flex;
+  background-color: #fff;
 }
- /* list decoration none
+
+.container {
+  display: flex;
+  width: 100%;
+}
+nav {
+  display: flex;
+  width: 100%;
+  font-size: 14px;
+  font-family: arial, sans-serif;
+  text-decoration: none;
+  justify-content: space-between;
+}
+.left-nav {
+  display: flex;
+  padding: 10px;
+  margin: 20px;
+}
+.right-nav {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+  margin: 20px;
+}
+li {
+  display: block;
+  padding: 10px;
+}
+button {
+  padding: 10px;
+}
+/* list decoration none
     center items
     search bar rounded
 
   */
+
+img {
+  height: 92px;
+}
+.logo {
+  justify-content: center;
+}
+form {
+  justify-content: center;
+}
+
+
