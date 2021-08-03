@@ -1,12 +1,6 @@
 const express = require('express');
 const router = express.Router();
-//const data = require('../data.js');
-
-
-let data = [
-    {id: "musicians", content: {a: 'a', b: 'b', c: 'c'}},
-    {id: "joiners", content: {a: 'a', b: 'b', c: 'c'}}
-];
+const data = require('../data.js');
 
 // route for retrieving all search results
 router.get('/', (req, res) => {
