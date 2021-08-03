@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://upload.wikimedia.org/wikipedia/commons/2/2d/Google-favicon-2015.png"
+    />
     <link href="assets/styles.css" rel="stylesheet" />
     <title>Google</title>
   </head>
@@ -27,20 +30,26 @@
       src=https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png>
     </div>
 
-    <form class="container">
-      <input type="text" placeholder="Search.." />
+    <form onsubmit="handleSubmit">
+      <div id="searchDiv" class="container">
+        <input type="text" placeholder="Search.." id="searchbar" />
+      </div>
+      <div class="container buttons">
+        <button type="submit">Search</button>
+        <button type="button" onclick="feelingLucky()">
+          I'm Feeling Lucky
+        </button>
+      </div>
     </form>
-    <div class="container">
-      <button type="button">Search</button>
-      <button type="button">I'm Feeling Lucky</button>
-    </div>
+
+    <footer>
+      <section id="footer-top" class="container footer">
+        <p class="bottom-left">Futureproof</p>
+      </section>
+      <section id="footer-bottom" class="container footer">
+        <p class="footer">© Mariusz and Abigail 2021</p>
+      </section>
+    </footer>
+    <script src="assets/script.js"></script>
   </body>
-  <footer>
-    <section id="footer-top" class="container">
-      <p class="bottom-left">Futureproof</p>
-    </section>
-    <section id="footer-bottom" class="container">
-      <p>© Mariusz and Abigail 2021</p>
-    </section>
-  </footer>
 </html>

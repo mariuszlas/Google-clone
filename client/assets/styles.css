@@ -30,13 +30,14 @@ li {
   padding: 10px;
 }
 button {
-  padding: 10px;
+  margin: 10px;
+  margin-right: 40px;
 }
-/* list decoration none
-    center items
-    search bar rounded
-
-  */
+.buttons {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
 
 img {
   height: 92px;
@@ -44,8 +45,23 @@ img {
 .logo {
   justify-content: center;
 }
-form {
+#searchDiv {
+  margin-top: 20px;
   justify-content: center;
 }
-
-
+#searchbar {
+  width: 35vw;
+  border-radius: 10%;
+}
+input[type="text"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
