@@ -2,22 +2,35 @@ const express = require('express');
 const router = express.Router();
 const data = require('../data.js');
 
-// route for retrieving all search results
+
 router.get('/', (req, res) => {
-    res.status(200).send(data[0].results);
+    res.status(200).send("Welcome to the Google Clone");
+})
+
+// route for retrieving all search results
+router.get('/:query', (req, res) => {
+    let query = req.params.query;
+    console.log(query);
+    res.status(200).send(searchTerm(query));
 });
 
-
-// route for retrieving a single search result
-router.get('/:index', (req, res) => {
-
-    let idx = parseInt(req.params.index);
-    if (idx >= 1 && idx <= 10) {
-        res.status(200).send(data[idx-1].content.b);
-    } else {
-        res.status(404).send("Page not found. Incorrect index.");
-    }
+router.get('/:query/:id', (req, res) => {
+    let query = req.params.query;
+    let id = parseInt(req.params.id);
+    let term = searchTerm(query);
+    res.status(200).send(searchResult(term, id));
 });
+
+function searchTerm(query) {
+    query.toLowerCase();
+    return data.filter(item => item.id === query);
+}
+
+function searchResult(contentArr, id) {
+    let resultsArr = contentArr[0]   // obj not arr
+    let obj = resultsArr.results;   //actual arr
+    return obj.filter(item => item.resNo == id)
+}
 
 
 module.exports = router;

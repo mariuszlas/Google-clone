@@ -7,12 +7,6 @@ const routes = require('./controllers/routes.js')
 const cors = require('cors');
 app.use(cors());
 
-app.get('/', (req, res) => {
-    res.status(200).send('Welcome to the Google Clone');
-})
-
-
-app.use('/musicians', routes);
-app.use('/joiners', routes);
+app.use('/', routes);
 
 module.exports = app;
