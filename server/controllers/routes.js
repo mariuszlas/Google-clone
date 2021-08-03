@@ -4,7 +4,7 @@ const data = require('../data.js');
 
 // route for retrieving all search results
 router.get('/', (req, res) => {
-    res.status(200).send(data[0].content);
+    res.status(200).send(data[0].results);
 });
 
 
