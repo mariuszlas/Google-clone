@@ -3,7 +3,7 @@ const app = express();
 const musicians = require('./data.js');
 const routes = require('./controllers/routes.js')
 
-// ensure corect CORS headers
+// ensure correct CORS headers
 const cors = require('cors');
 app.use(cors());
 
