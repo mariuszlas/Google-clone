@@ -12,7 +12,7 @@ function redirect(isLucky) {
 
 
 async function getData(value) {
-
+    // retrieve data from server based on search result
     try {
         let response = await fetch(`http://${host}:${port}/${value}`);
         let data = await response.json();
@@ -25,6 +25,7 @@ async function getData(value) {
 }
 
 function createElement(obj) {
+    // create HTML elements do display data received from Server
 
     let results = document.querySelector('#returnResults') ;
     let section = document.createElement('section');
@@ -43,7 +44,8 @@ function createElement(obj) {
 
 
 async function getLuckyData() {
-
+    // retrieve data for only one random search result
+    
     let termIdx = Math.floor(Math.random() * (2 - 1) + 1);
     let terms = ['musicians', 'painters']
     let term = terms[termIdx-1];
