@@ -1,5 +1,6 @@
 const request = require('supertest');
 const server = require('../server.js');
+const data = require('../data.js');
 
 describe('API server', () => {
 
@@ -21,10 +22,6 @@ describe('API server', () => {
     });
 
     it('responds to GET /musicians with status 200', (done) => {
-        request(api).get('/musicians').expect(200, done);
-    });
-
-    it('responds to GET /musicians/8 with status 200', (done) => {
         request(api).get('/musicians').expect(200, done);
     });
 
