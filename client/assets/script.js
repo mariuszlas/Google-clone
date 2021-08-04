@@ -24,8 +24,4 @@ function feelingLucky() {
     window.location = `./results.html?search=${searchTerm}&lucky=true`;
 }
 
-// function searchResult(contentArr, id) {
-//     let resultsArr = contentArr[0]   // obj not arr
-//     let obj = resultsArr.results;   //actual arr
-//     return obj.filter(item => item.resNo == id)
-// }
+
