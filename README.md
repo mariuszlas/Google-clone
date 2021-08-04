@@ -14,6 +14,7 @@
 
 #### Client
 * Open the `index.html` file in the `client` folder in your preferred browser.
+* Try searching for one of the following terms: `musicians`, `painters` or, if you feel lucky, use the appropriate button to get a random result.
 
 ## Changelog
 
@@ -25,3 +26,8 @@
 [x]
 
 ## Wins & Challenges
+### Wins
+* Implemented routing based on the search term which is passed on to the search functions.
+
+### Challenges
+* Realised limitations of using JavaScript arrays and objects as a database instead of an SQL database (in terms of searching and sorting data).
