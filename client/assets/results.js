@@ -5,11 +5,9 @@ const isLucky = urlParams.get('lucky');
 const host = 'localhost';
 const port = 5000;
 
-
 function redirect(isLucky) {
     isLucky === 'true' ? getLuckyData(): getData(searchTerm);
 }
-
 
 async function getData(value) {
     // retrieve data from server based on search result
@@ -26,7 +24,6 @@ async function getData(value) {
 
 function createElement(obj) {
     // create HTML elements do display data received from Server
-
     let results = document.querySelector('#returnResults') ;
     let section = document.createElement('section');
     let link = document.createElement('a');
@@ -42,23 +39,15 @@ function createElement(obj) {
     results.appendChild(section);
 }
 
-
 async function getLuckyData() {
     // retrieve data for only one random search result
-    
-    let termIdx = Math.floor(Math.random() * (2 - 1) + 1);
-    let terms = ['musicians', 'painters']
-    let term = terms[termIdx-1];
-    let search = terms[term];
-    let resIdx = Math.floor(Math.random() * (10 - 1) + 1);
-
     try {
-        let response = await fetch(`http://${host}:${port}/${term}/${resIdx}`);
+        let response = await fetch(`http://${host}:${port}/random`);
         let data = await response.json();
-        createElement(data[0]);
+        console.log(data);
+        createElement(data);
     } catch (err) {
         console.log(err);
-        handleError();
     }
 }
 
