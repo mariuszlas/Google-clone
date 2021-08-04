@@ -28,6 +28,7 @@ function feelingLucky() {
     window.location = `./results.html?search=${searchTerm}&lucky=true`;
 }
 
+<<<<<<< HEAD
 let host = 'localhost';
 let port = 5000;
 
@@ -91,3 +92,6 @@ function getLuckyData() {
 
 
 initBindings();
+=======
+
+>>>>>>> cfcc24cb48282fcc18a51e88fb22629102f2d0c1
