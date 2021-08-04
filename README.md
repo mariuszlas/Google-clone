@@ -17,13 +17,17 @@
 * Try searching for one of the following terms: `musicians`, `painters` or, if you feel lucky, use the appropriate button to get a random result.
 
 ## Changelog
+server/data.js server/controllers/routes.js
+[x] Added data structure to data.js
 
-[x]
-[x]
-[x]
-[x]
-[x]
-[x]
+server/data.js
+[x] Added data to database.
+
+client/results.html client/{search.html → lucky.html}  client/index.html client/assets/styles.css
+[x] Updated Styles and HTML Files
+
+server/test/api.spec.js
+[x] Added tests for API endpoints
 
 ## Wins & Challenges
 ### Wins
@@ -31,3 +35,4 @@
 
 ### Challenges
 * Realised limitations of using JavaScript arrays and objects as a database instead of an SQL database (in terms of searching and sorting data).
+

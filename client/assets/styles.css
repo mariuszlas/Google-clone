@@ -42,7 +42,10 @@ button {
   justify-content: center;
   margin: 20px;
 }
-
+#sign-in {
+  display: flex;
+  justify-content: flex-end;
+}
 img {
   height: 92px;
 }
@@ -61,7 +64,7 @@ img {
   width: 500px;
   height: 50%;
   border-width: 1px;
-  border-color: rgb(212, 211, 211);
+  border-color: rgb(212, 211, 211, 0.4);
   border-style: solid;
 }
 .buttons {
@@ -87,26 +90,14 @@ input[type="text"] {
   display: flex;
   flex-direction: column;
 }
-#returnResults > h1 {
-  display: flex;
+
+h3 {
+  font-size: 20px;
 }
-
-
-
 li {
   display: inline-block;
   list-style-type: none;
   padding: 5px;
-}
-
-#navicon {
-  display: inline;
-  height: 30px;
-}
-
-#navbar {
-  justify-content: space-between;
-  align-items: center;
 }
 
 #logo {
@@ -115,8 +106,7 @@ li {
   width: 30%;
 }
 
-.form {
-  margin: 10%;
-  display: block;
-  width: 90%;
+.resultsContainer {
+  max-width: 90vw;
+  margin: 0 auto;
 }
