@@ -10,10 +10,13 @@
     "test": "jest --watchAll",
     "coverage": "jest --coverage"
   },
-  "jest": { "testEnvironment": "jsdom" } ,
+  "jest": {
+    "testEnvironment": "jsdom"
+  },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "jest": "^27.0.6"
+    "jest": "^27.0.6",
+    "jest-fetch-mock": "^3.0.3"
   }
 }

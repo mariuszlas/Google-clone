@@ -18,7 +18,6 @@ async function getData(value) {
         dataArr.forEach(obj => createElement(obj));
     } catch (err) {
         console.log(err);
-        handleError();
     }
 }
 
@@ -52,3 +51,5 @@ async function getLuckyData() {
 }
 
 redirect(isLucky);
+
+module.exports = { redirect, getData, getLuckyData, createElement }
