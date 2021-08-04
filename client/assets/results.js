@@ -5,67 +5,75 @@ const isLucky = urlParams.get('lucky');
 const host = 'localhost';
 const port = 5000;
 
-function redirect(isLucky) {
 
-    if (isLucky === true) {
-        getLuckyData()
-    } else {
-        getData(searchTerm);
-    }
+function redirect(isLucky) {
+    isLucky === 'true' ? getLuckyData(): getData(searchTerm);
 }
 
 
 async function getData(value) {
 
-    let url = `http://${host}:${port}/${value}`;
-    let response = await fetch(url);
-    let data = await response.json();
-    updateDOM(data);
-
+    try {
+        let response = await fetch(`http://${host}:${port}/${value}`);
+        let data = await response.json();
+        let dataArr = data[0].results;
+        dataArr.forEach(obj => createElement(obj));
+    } catch (err) {
+        console.log(err);
+        handleError();
+    }
 }
 
+function createElement(obj) {
 
-function updateDOM(data) {
-    // create new HTML elements and add data received from server
-
-    let dataArr = data[0].results;
     let body = document.querySelector('body');
-
-    dataArr.forEach(obj => {
-        let section = document.createElement('section');
-        let link = document.createElement('a');
-        let name = document.createElement('h3');
-        let des = document.createElement('p');
-        link.setAttribute('href', obj.content.link);
-        name.innerText = obj.content.name;
-        des.innerText = obj.content.description;
-        section.appendChild(link);
-        section.appendChild(name);
-        section.appendChild(des);
-        body.appendChild(section);
-    })
+    let section = document.createElement('section');
+    let link = document.createElement('a');
+    let name = document.createElement('h3');
+    let des = document.createElement('p');
+    link.setAttribute('href', '#');
+    name.innerText = obj.content.name;
+    des.innerText = obj.content.description;
+    link.innerText = obj.content.link;
+    section.appendChild(link);
+    section.appendChild(name);
+    section.appendChild(des);
+    body.appendChild(section);
 }
 
 
-function getLuckyData() {
-    console.log('lucky data')
-}
+async function getLuckyData() {
 
+    let termIdx = Math.floor(Math.random() * (2 - 1) + 1);
+    let terms = ['musicians', 'painters']
+    let term = terms[termIdx-1];
+    let search = terms[term];
+    let resIdx = Math.floor(Math.random() * (10 - 1) + 1);
+
+    try {
+        let response = await fetch(`http://${host}:${port}/${term}/${resIdx}`);
+        let data = await response.json();
+        createElement(data[0]);
+    } catch (err) {
+        console.log(err);
+        handleError();
+    }
+}
 
 redirect(isLucky);
 
-//
-// if(urlParams.get("lucky")) {
+// //
+// // if(urlParams.get("lucky")) {
 //     fetch(`http://localhost:5500/${searchTerm}`)
 //     .then(resp => resp.json())
 //     .then(resp => {
 //     // const results = resp[0].results
-//     console.log(resp);
-//     document.createElement("SECTION")
-// })} else {
-//     fetch(`http://localhost:5500/${searchTerm}`)
-//     .then(resp => resp.json())
-//     .then(resp => {
+// //     console.log(resp);
+// //     document.createElement("SECTION")
+// // })} else {
+// //     fetch(`http://localhost:5500/${searchTerm}`)
+// //     .then(resp => resp.json())
+// //     .then(resp => {
 //     const results = resp[0].results
 //     console.log("results", results)
 //     for (result of results) {
@@ -81,7 +89,7 @@ redirect(isLucky);
 //     section.appendChild(para);
 //
 // }
-//
-//
+// //
+// //
 // })
 // }

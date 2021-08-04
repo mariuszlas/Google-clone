@@ -13,7 +13,7 @@ function initBindings() {
     luckyBbtn.addEventListener('click', (e) => {
         e.preventDefault();
         // when you click feeling lucky results page loads and returns one results
-        window.location = `./results.html?search=${value}&lucky=true`;
+        window.location = `./results.html?search=null&lucky=true`;
     })
 }
 
