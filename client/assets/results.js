@@ -26,7 +26,7 @@ async function getData(value) {
 
 function createElement(obj) {
 
-    let body = document.querySelector('body');
+    let results = document.querySelector('#returnResults') ;
     let section = document.createElement('section');
     let link = document.createElement('a');
     let name = document.createElement('h3');
@@ -38,7 +38,7 @@ function createElement(obj) {
     section.appendChild(link);
     section.appendChild(name);
     section.appendChild(des);
-    body.appendChild(section);
+    results.appendChild(section);
 }
 
 
