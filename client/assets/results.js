@@ -12,7 +12,7 @@ function redirect(isLucky) {
 
 
 async function getData(value) {
-
+    // retrieve data from server based on search result
     try {
         let response = await fetch(`http://${host}:${port}/${value}`);
         let data = await response.json();
@@ -25,8 +25,9 @@ async function getData(value) {
 }
 
 function createElement(obj) {
+    // create HTML elements do display data received from Server
 
-    let body = document.querySelector('body');
+    let results = document.querySelector('#returnResults') ;
     let section = document.createElement('section');
     let link = document.createElement('a');
     let name = document.createElement('h3');
@@ -38,12 +39,13 @@ function createElement(obj) {
     section.appendChild(link);
     section.appendChild(name);
     section.appendChild(des);
-    body.appendChild(section);
+    results.appendChild(section);
 }
 
 
 async function getLuckyData() {
-
+    // retrieve data for only one random search result
+    
     let termIdx = Math.floor(Math.random() * (2 - 1) + 1);
     let terms = ['musicians', 'painters']
     let term = terms[termIdx-1];
@@ -61,35 +63,3 @@ async function getLuckyData() {
 }
 
 redirect(isLucky);
-
-// //
-// // if(urlParams.get("lucky")) {
-//     fetch(`http://localhost:5500/${searchTerm}`)
-//     .then(resp => resp.json())
-//     .then(resp => {
-//     // const results = resp[0].results
-// //     console.log(resp);
-// //     document.createElement("SECTION")
-// // })} else {
-// //     fetch(`http://localhost:5500/${searchTerm}`)
-// //     .then(resp => resp.json())
-// //     .then(resp => {
-//     const results = resp[0].results
-//     console.log("results", results)
-//     for (result of results) {
-//         console.log(result)
-//         //create a function to add to if statement
-//     const section = document.createElement("section");
-//     const header = document.createElement("h1");
-//     const name = document.createTextNode(result.content.name);
-//     const para = document.createTextNode(result.content.description);
-//     document.getElementById("returnResults").appendChild(section);
-//     section.appendChild(header).setAttribute();
-//     section.appendChild(name);
-//     section.appendChild(para);
-//
-// }
-// //
-// //
-// })
-// }
