@@ -5,6 +5,7 @@
 * Clone or download the repo.
 * Open the terminal and navigate to `google-clone` folder
 * `cd` into the `server` folder and run `npm install` to install dependencies
+* `cd` into the `client` folder and run `npm install` to install dependencies
 
 ### Usage
 #### Server
@@ -13,6 +14,7 @@
 * Run `npm start` to launch the server
 
 #### Client
+* In the `client` folder run `npm test` to launch test suite
 * Open the `index.html` file in the `client` folder in your preferred browser.
 * Try searching for one of the following terms: `musicians`, `painters` or, if you feel lucky, use the appropriate button to get a random result.
 
