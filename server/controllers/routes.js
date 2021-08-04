@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const data = require('../data.js');
 
-
 router.get('/', (req, res) => {
     res.status(200).send("Welcome to the Google Clone");
 });
@@ -10,16 +9,9 @@ router.get('/', (req, res) => {
 // route for retrieving all search results for a given search term
 router.get('/:query', (req, res) => {
     let query = req.params.query;
-    let termArray = searchTerm(query);
+    let termArray;
+    query === 'random' ? termArray = randomTerm(data): termArray = searchTerm(query);
     sendResponse(res, termArray);
-});
-
-//route for retrieving a single search result for given search term
-router.get('/:query/:id', (req, res) => {
-    let query = req.params.query;
-    let id = parseInt(req.params.id);
-    let searchArray = searchResult(searchTerm(query), id);
-    sendResponse(res, searchArray);
 });
 
 function sendResponse(res, searchResults) {
@@ -37,11 +29,15 @@ function searchTerm(query) {
     return data.filter(item => item.id === query);
 }
 
-function searchResult(obj, id) {
-    // search for a single result (based on its number) in an array
-    let contentArr = obj[0].results;
-    return contentArr.filter(item => item.resNo == id)
+function randomTerm(data) {
+    // find a random search result in the whole data base
+    termNo = data.length;
+    termIdx = Math.floor(Math.random() * (termNo - 1) + 1);
+    term = data[termIdx];
+    resLegth = term.results.length;
+    resIdx = Math.floor(Math.random() * (resLegth - 1) + 1);
+    result = term.results[resIdx];
+    return result;
 }
-
 
 module.exports = router;
