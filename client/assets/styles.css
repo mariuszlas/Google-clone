@@ -1,0 +1,112 @@
+* {
+  font-family: arial, sans-serif;
+  font-size: 13px;
+}
+
+body {
+  background-color: #fff;
+}
+.container {
+  display: flex;
+  width: 100%;
+}
+nav {
+  display: flex;
+  width: 100%;
+  font-size: 14px;
+  font-family: arial, sans-serif;
+  text-decoration: none;
+  justify-content: space-between;
+}
+.left-nav {
+  display: flex;
+  padding: 10px;
+  margin: 20px;
+}
+.right-nav {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+  margin: 20px;
+}
+li {
+  display: block;
+  padding: 10px;
+}
+button {
+  margin: 10px;
+  margin-right: 40px;
+}
+.buttons {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+#sign-in {
+  display: flex;
+  justify-content: flex-end;
+}
+img {
+  height: 92px;
+}
+.logo {
+  justify-content: center;
+}
+
+#searchDiv {
+  margin-top: 20px;
+  justify-content: center;
+  border-radius: 15%;
+}
+
+#searchbar {
+  border-radius: 40px;
+  width: 500px;
+  height: 50%;
+  border-width: 1px;
+  border-color: rgb(212, 211, 211, 0.4);
+  border-style: solid;
+}
+.buttons {
+  border-radius: 5px;
+  background-color: whitesmoke;
+  border: 0px;
+  padding: 10px;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+#returnResults {
+  display: flex;
+  flex-direction: column;
+}
+
+h3 {
+  font-size: 20px;
+}
+li {
+  display: inline-block;
+  list-style-type: none;
+  padding: 5px;
+}
+
+#logo {
+  margin: 25px;
+  display: block;
+  width: 30%;
+}
+
+.resultsContainer {
+  max-width: 90vw;
+  margin: 0 auto;
+}

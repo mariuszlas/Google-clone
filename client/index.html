@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="assets/styles.css" rel="stylesheet" type="text/css" />
+    <script defer src="assets/script.js"></script>
+    <title>Google</title>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <ul class="left-nav">
+          <li class="nav">About</li>
+          <li class="nav">Store</li>
+        </ul>
+        <ul class="right-nav">
+          <li>Gmail</li>
+          <li>Images</li>
+          <button id="sign-in">Sign in</button>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="logo container">
+      <img
+      src=https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png>
+    </div>
+
+    <!-- <form onsubmit="handleSubmit"> -->
+    <div>
+      <form id="submit-form">
+        <div id="searchDiv" class="container">
+          <input
+            type="text"
+            name="search"
+            placeholder="Search.."
+            id="searchbar"
+          />
+        </div>
+      </form>
+
+      <div class="container buttons">
+        <button
+          id="search-btn"
+          type="submit"
+          form="submit-form"
+          name="search-btn"
+        >
+          Search
+        </button>
+        <button id="lucky-btn" name="lucky-btn">I'm Feeling Lucky</button>
+      </div>
+    </div>
+
+    <footer>
+      <section id="footer-top" class="container footer">
+        <p class="bottom-left">Futureproof</p>
+      </section>
+      <section id="footer-bottom" class="container footer">
+        <p class="footer">© Mariusz and Abigail 2021</p>
+      </section>
+    </footer>
+  </body>
+</html>
