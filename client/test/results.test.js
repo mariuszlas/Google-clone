@@ -11,10 +11,21 @@ describe('main functionality', () => {
     fetch.resetMocks();  //cear out all mocks before each test
    });
 
-  it('makes a fetch to API', async () => {
+  it('makes a fetch to API to get data for a search term', async () => {
     results.getData('musicians');
     expect(fetch).toHaveBeenCalledTimes(1);
     expect(fetch).toHaveBeenCalledWith('http://localhost:5000/musicians');
+  })
+
+  it('makes a fetch to API to get lucky data', async () => {
+    results.getLuckyData('lucky');
+    expect(fetch).toHaveBeenCalledTimes(1);
+    expect(fetch).toHaveBeenCalledWith('http://localhost:5000/random');
+  })
+
+  it('makes a fetch to API to get lucky data', async () => {
+    results.redirect('false');
+    expect(fetch).toHaveBeenCalledTimes(1);
   })
 
 })
